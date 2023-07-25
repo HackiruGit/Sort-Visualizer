@@ -8,6 +8,7 @@ int main(int argc, char* args[]) {
 	SDL_SetWindowPosition(window, 60, 32);
 
 	std::vector<int>nums(MAX_SIZE, 0);	
+	int cnt;
 	fillArray(nums, MAX_SIZE);
 
 	bool running{ true };
@@ -20,7 +21,13 @@ int main(int argc, char* args[]) {
 			running = false;
 			break;
 		case '1':
-			SDL_Delay(2000); /*2 seconds delay*/
+			cnt = 0;
+			while (++cnt < 1000)
+			{
+				SDL_Event event;
+				SDL_PollEvent(&event);
+				SDL_Delay(1);
+			}
 			bubbleSort(nums);
 			//ensureSort(nums);
 			std::cout << "\nArray swaps: " << swaps << ". " <<
@@ -32,7 +39,13 @@ int main(int argc, char* args[]) {
 			system("cls"); /*clears terminal*/
 			break;
 		case '2':
-			SDL_Delay(2000); /*2 seconds delay*/
+			cnt = 0;
+			while (++cnt < 1000)
+			{
+				SDL_Event event;
+				SDL_PollEvent(&event);
+				SDL_Delay(1);
+			}
 			quickSort(nums, 0, MAX_SIZE - 1);
 			std::cout << "\nArray swaps: " << swaps << ". " <<
 				"Array accesses: " << array_accesses << ".\n";
@@ -43,7 +56,13 @@ int main(int argc, char* args[]) {
 			system("cls"); /*clears terminal*/
 			break;
 		case '3':
-			SDL_Delay(2000); /*2 seconds delay*/
+			cnt = 0;
+			while (++cnt < 1000)
+			{
+				SDL_Event event;
+				SDL_PollEvent(&event);
+				SDL_Delay(1);
+			}
 			selectionSort(nums);
 			std::cout << "\nArray swaps: " << swaps << ". " <<
 				"Array accesses: " << array_accesses << ".\n";
@@ -54,7 +73,13 @@ int main(int argc, char* args[]) {
 			system("cls"); /*clears terminal*/
 			break;
 		case '4':
-			SDL_Delay(2000); /*2 seconds delay*/
+			cnt = 0;
+			while (++cnt < 1000)
+			{
+				SDL_Event event;
+				SDL_PollEvent(&event);
+				SDL_Delay(1);
+			}
 			insertionSort(nums);
 			std::cout << "\nArray swaps: " << swaps << ". " <<
 				"Array accesses: " << array_accesses << ".\n";
@@ -65,7 +90,13 @@ int main(int argc, char* args[]) {
 			system("cls"); /*clears terminal*/
 			break;
 		case '5':
-			SDL_Delay(2000); /*2 seconds delay*/
+			cnt = 0;
+			while (++cnt < 1000)
+			{
+				SDL_Event event;
+				SDL_PollEvent(&event);
+				SDL_Delay(1);
+			}
 			mergeSort(nums, 0, nums.size() - 1);
 			std::cout << "\nArray swaps: " << swaps << ". " <<
 				"Array accesses: " << array_accesses << ".\n";

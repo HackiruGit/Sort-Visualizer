@@ -2,7 +2,7 @@
 #define LIBRARIES 
 
 #include <SDL.h>
-#include <SDL_ttf.h>
+//#include <SDL_ttf.h>
 #include <iostream>
 #include <algorithm>
 #include <set>
