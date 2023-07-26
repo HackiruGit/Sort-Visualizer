@@ -13,4 +13,11 @@ void insertionSort(std::vector<int>& nums);
 void merge(std::vector<int>& nums, std::size_t l, std::size_t m, std::size_t r);
 void mergeSort(std::vector<int>& nums, std::size_t l, std::size_t r);
 
+bool bogoCheck(std::vector<int>& nums);
+void bogoSort(std::vector<int>& nums);
+
+void gnomeSort(std::vector<int>& nums);
+void cocktailSort(std::vector<int>& nums);
+void shellSort(std::vector<int>& nums);
+
 #endif

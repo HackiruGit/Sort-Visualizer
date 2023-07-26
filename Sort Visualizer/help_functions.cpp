@@ -19,32 +19,24 @@ void intro() {
 		<< "Press '3' to choose 'Selection Sort'.\n"
 		<< "Press '4' to choose 'Insertion Sort'.\n"
 		<< "Press '5' to choose 'Merge Sort'.\n"
+		<< "Press '6' to choose 'Bogo Sort'.\n"
+		<< "Press '7' to choose 'Gnome Sort'.\n"
+		<< "Press '8' to choose 'Cocktail Sort'.\n"
+		<< "Press '9' to choose 'Shell Sort'.\n"
 		<< ".....................................\n"
 		<< "Your choice: ";
 	return;
 }
 
-char makeChoice() {
-	char choice{};
+int makeChoice() {
+	int choice{};
 	std::cin >> choice;
 
-	std::set<char>acceptables{ '0','1','2','3','4','5' };
+	std::set<int>acceptables{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	if (acceptables.find(choice) == acceptables.end()) {
-		choice = '1';
+		choice = 1;
 	}
 	return choice;
-}
-
-void fillArray(std::vector<int>& nums, std::size_t size) {
-
-	/*Marsenne's Twister algorithm for generating random numbers*/
-	std::mt19937 random_generator;
-	std::uniform_int_distribution random_range(1, 100);
-
-	for (int i = 0; i < size; ++i) {
-		nums[i] = random_range(random_generator);
-	}
-	return;
 }
 
 void close() {
@@ -84,59 +76,43 @@ void show_state(std::vector<int>& nums, std::size_t red, std::size_t blue) {
 	return;
 }
 
-void show_state(std::vector<int>& nums) {
-	/*yellow*/
-	SDL_SetRenderDrawColor(render, 255, 255, 0, 255);
-
-	std::size_t index{ 0 };
-	for (int i : nums) {
-
-		SDL_RenderDrawLine(render, index, 100, index, i);
-		SDL_RenderPresent(render);
-		SDL_Delay(10);
-		++index;
-	}
-	return;
-}
-
-void checkSort(std::vector<int>& nums) {
-	bool isSorted{ std::is_sorted(nums.begin(), nums.end()) };
-	SDL_SetRenderDrawColor(render, 255, 255, 0, 255);
-
-	std::size_t index{ 0 };
-	for (int i : nums) {
-		/*i shows which part of the array is currently being sorted*/
-		SDL_RenderDrawLine(render, index, 100, index, i);
-		SDL_RenderPresent(render);
-		SDL_Delay(10);
-		++index;
-	}
-	std::cout << "Array is sorted: " << std::boolalpha << isSorted << '\n';
-	system("pause");
-	return;
-}
-
 void printSortInfo(char choice) {
 	switch (choice) {
-	//BUBBLE-SORT
-	case '1':
+		//BUBBLE-SORT
+	case 1:
 		std::cout << "\nTime Complexity: O(n^2) " << "\nAuxiliary Space: O(1)\n\n";
 		break;
-	//QUICK-SORT
-	case '2':
+		//QUICK-SORT
+	case 2:
 		std::cout << "\nTime Complexity: O(n*log(n)) " << "\nAuxiliary Space: O(log(n))\n\n";
 		break;
-	//SELECTION-SORT
-	case '3':
+		//SELECTION-SORT
+	case 3:
 		std::cout << "\nTime Complexity: O(n^2) " << "\nAuxiliary Space: O(1)\n\n";
 		break;
-	//INSERION-SORT
-	case '4':
+		//INSERION-SORT
+	case 4:
 		std::cout << "\nTime Complexity: O(n^2) " << "\nAuxiliary Space: O(1)\n\n";
 		break;
-	//MERGE-SORT
-	case '5':
+		//MERGE-SORT
+	case 5:
 		std::cout << "\nTime Complexity: O(n*log(n)) " << "\nAuxiliary Space: O(n)\n\n";
+		break;
+		//BOGO-SORT
+	case 6:
+		std::cout << "\nTime Complexity: O(infinity) " << "\nAuxiliary Space: O(1)\n\n";
+		break;
+		//GNOME-SORT
+	case 7:
+		std::cout << "\nTime Complexity: O(n^2) " << "\nAuxiliary Space: O(1)\n\n";
+		break;
+		//COCKTAIL-SORT
+	case 8:
+		std::cout << "\nTime Complexity: O(n^2) " << "\nAuxiliary Space: O(1)\n\n";
+		break;
+		//SHELL-SORT
+	case 9:
+		std::cout << "\nTime Complexity: O(n^2) " << "\nAuxiliary Space: O(1)\n\n";
 		break;
 	}
 }
