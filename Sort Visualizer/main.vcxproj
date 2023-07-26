@@ -155,6 +155,7 @@
     <ClInclude Include="help_functions.h" />
     <ClInclude Include="libraries.h" />
     <ClInclude Include="sort_functions.h" />
+    <ClInclude Include="storage_class.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

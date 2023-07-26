@@ -38,5 +38,8 @@
     <ClInclude Include="global_variables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="storage_class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
