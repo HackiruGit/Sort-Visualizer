@@ -269,7 +269,7 @@ void cocktailSort(std::vector<int>& nums) {
 
 		flag = false;
 		end--; //decrease the end pointer
-		for (std::size_t i{ end - 1 }; i >= start; --i) { //scan from right to left
+		for (std::size_t i{ end - 1 }; i > start; --i) { //scan from right to left
 			++array_accesses;
 			if (nums[i] > nums[i + 1]) {
 				std::swap(nums[i], nums[i + 1]);
